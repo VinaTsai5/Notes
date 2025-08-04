@@ -103,6 +103,24 @@
     transition: all 0.3s ease;
 }
 .tag-link:hover {
-    background: #13f7f759;
+    background: #2c5aa0;
     color: white;
+}
+.post-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-image {
+    height: 250px;
+    overflow: hidden;
+}
+.post-content {
+    padding: 1.5rem;
+}
+.posts-grid {
+    display: grid;
+    gap: 2rem;
 }
