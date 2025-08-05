@@ -103,8 +103,8 @@
     transition: all 0.3s ease;
 }
 .tag-link:hover {
-    background: #2c5aa0;
-    color: white;
+    background: #52eef3;
+    color: rgb(27, 26, 26);
 }
 .post-card {
     background: white;
