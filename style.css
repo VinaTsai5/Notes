@@ -38,6 +38,11 @@
 .nav-link:hover, .nav-link.active {
     color: #2c5aa0;
 }
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0px 20px;
+}
 .hero{
     height: 100vh;
     flex-direction: column;
