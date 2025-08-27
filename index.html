@@ -27,7 +27,7 @@
     <p>ARASHI ARASHI FOR Dream~~</p>
     <button id="exploreBtn" class = "hero-btn">開始探索</button>
    </section>
-  <main>
+  <main id = "main-content">
     <div class="container">
         <div class="content-wrapper">
             <div class = "posts">
@@ -140,9 +140,12 @@
             });
         });
 
-          document.getElementById("exploreBtn").addEventListener("click", function() {
-            document.getElementById("content").scrollIntoView({ behavior: "smooth" });
-          });
+       function scrollToContent() {
+           document.getElementById('main-content').scrollIntoView({
+               behavior: 'smooth'
+           });
+       }
+ 
 
     </script>
 </body>
