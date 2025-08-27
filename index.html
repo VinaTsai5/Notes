@@ -28,7 +28,7 @@
     <p>ARASHI ARASHI FOR Dream~~</p>
     <button id="exploreBtn" class = "hero-btn">開始探索</button>
    </section>
-  <main id = "main-content">
+  <main  id = "main-content">
     <div class="container">
         <div class="content-wrapper">
             <div class = "posts">
@@ -146,6 +146,19 @@
                behavior: 'smooth'
            });
        }
+
+        const hour = new Date().getHours();
+          const greetingElement = document.querySelector('.hero h1');
+          
+          if (hour < 6) {
+            greetingElement.textContent = '夜深了，準備下次旅行吧';
+          } else if (hour < 12) {
+            greetingElement.textContent = '早安！開始新的旅程';
+          } else if (hour < 18) {
+            greetingElement.textContent = '午安！探索世界的美麗';
+          } else {
+            greetingElement.textContent = '晚安！回味今日的美景';
+          }
  
 
     </script>
