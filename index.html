@@ -168,18 +168,31 @@
             $(this).addClass('active');
         });
         
-         let tagText = $(this).text();
-            if (tagText === '全部') {
-                $('.post-card').show();
-            } else {
-                $('.post-card').hide().filter(function() {
-                    var tags = $(this).find('.post-tags .tag').map(function() {
-                        return $(this).text();
-                    }).get();
-                   
-                    return tags.includes(tagText);
-                }).show();
-            }
+         $('.tag-link').click(function(e){
+    e.preventDefault();
+
+    // UI 樣式處理
+    $('.tag-link').removeClass('active');
+    $(this).addClass('active');
+
+    // 取得純標籤文字（去除括號與數字）
+    let rawText = $(this).text();
+    let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
+
+    // 顯示對應文章
+    if (tagText === '全部') {
+        $('.post-card').show();
+    } else {
+        $('.post-card').hide().filter(function() {
+            let tags = $(this).find('.post-tags .tag').map(function() {
+                return $(this).text();
+            }).get();
+
+            return tags.includes(tagText);
+        }).show();
+    }
+});
+
  
  
 
