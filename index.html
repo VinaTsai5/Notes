@@ -161,6 +161,12 @@
           } else {
             greetingElement.textContent = '晚安！回味今日的美景';
           }
+        
+        $('.tag-link').click(function(e){
+            e.preventDefault();
+            $('.tag-link').removeClass('active');
+            $(this).addClass('active');
+        });
  
 
     </script>
