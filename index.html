@@ -161,20 +161,39 @@
           } else {
             greetingElement.textContent = '晚安！回味今日的美景';
           }
+
         
         $('.tag-link').click(function(e){
             e.preventDefault();
             $('.tag-link').removeClass('active');
             $(this).addClass('active');
         });
-        
-         $('.tag-link').click(function(e){
+
+        let tagText = $(this).text();
+        if (tagText === '全部') 
+        {
+            $('.post-card').show();
+        } 
+        else 
+        {
+            $('.post-card').hide();
+              $('.post-tags .tag').each(function() {
+                if (tagText.indexOf($(this).text()) !== -1) {
+                  $(this).parents('.post-card').show();
+                }
+              });
+        }
+      
+    /*     
+    $('.tag-link').click(function(e){
     e.preventDefault();
 
     // UI 樣式處理
     $('.tag-link').removeClass('active');
     $(this).addClass('active');
-
+             
+    
+      
     // 取得純標籤文字（去除括號與數字）
     let rawText = $(this).text();
     let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
@@ -190,7 +209,7 @@
 
             return tags.includes(tagText);
         }).show();
-    }
+    }*/
 });
 
  
