@@ -149,18 +149,18 @@
            });
        }
 
-        const hour = new Date().getHours();
-          const greetingElement = document.querySelector('.hero h1');
-          
-          if (hour < 6) {
-            greetingElement.textContent = '夜深了，準備下次旅行吧';
-          } else if (hour < 12) {
-            greetingElement.textContent = '早安！開始新的旅程';
-          } else if (hour < 18) {
-            greetingElement.textContent = '午安！探索世界的美麗';
-          } else {
-            greetingElement.textContent = '晚安！回味今日的美景';
-          }
+      const hour = new Date().getHours();
+      const greetingElement = document.querySelector('.hero h1');
+      
+      if (hour < 6) {
+        greetingElement.textContent = '夜深了，準備下次旅行吧';
+      } else if (hour < 12) {
+        greetingElement.textContent = '早安！開始新的旅程';
+      } else if (hour < 18) {
+        greetingElement.textContent = '午安！探索世界的美麗';
+      } else {
+        greetingElement.textContent = '晚安！回味今日的美景';
+      }
 
         
         $('.tag-link').click(function(e){
@@ -184,16 +184,7 @@
               });
         }
       
-    /*     
-    $('.tag-link').click(function(e){
-    e.preventDefault();
-
-    // UI 樣式處理
-    $('.tag-link').removeClass('active');
-    $(this).addClass('active');
-             
-    
-      
+    /*    
     // 取得純標籤文字（去除括號與數字）
     let rawText = $(this).text();
     let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
@@ -210,11 +201,6 @@
             return tags.includes(tagText);
         }).show();
     }*/
-});
-
- 
- 
-
     </script>
 </body>
 </html>
