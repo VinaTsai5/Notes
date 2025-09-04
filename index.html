@@ -167,41 +167,43 @@
         e.preventDefault();
         $('.tag-link').removeClass('active');
         $(this).addClass('active');
-    });
-    
-    let tagText = $(this).text();
-    if (tagText === '全部')
-    {
-        $('.post-card').show();
-    } 
-    else
-    {
-        $('.post-card').hide();
-        $('.post-tags .tag').each(function() 
+
+        let tagText = $(this).text();
+        if (tagText === '全部')
         {
-            if (tagText.indexOf($(this).text()) !== -1) 
+            $('.post-card').show();
+        } 
+        else
+        {
+            $('.post-card').hide();
+            $('.post-tags .tag').each(function() 
             {
-                $(this).parents('.post-card').show();
-            }
-         });
-    }
-    /*    
-    // 取得純標籤文字（去除括號與數字）
-    let rawText = $(this).text();
-    let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
+                if (tagText.indexOf($(this).text()) !== -1) 
+                {
+                    $(this).parents('.post-card').show();
+                }
+             });
+        }
 
-    // 顯示對應文章
-    if (tagText === '全部') {
-        $('.post-card').show();
-    } else {
-        $('.post-card').hide().filter(function() {
-            let tags = $(this).find('.post-tags .tag').map(function() {
-                return $(this).text();
-            }).get();
+        /*    
+        // 取得純標籤文字（去除括號與數字）
+        let rawText = $(this).text();
+        let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
+    
+        // 顯示對應文章
+        if (tagText === '全部') {
+            $('.post-card').show();
+        } else {
+            $('.post-card').hide().filter(function() {
+                let tags = $(this).find('.post-tags .tag').map(function() {
+                    return $(this).text();
+                }).get();
+    
+                return tags.includes(tagText);
+            }).show();
+        }*/
 
-            return tags.includes(tagText);
-        }).show();
-    }*/
+    });
     </script>
 </body>
 </html>
