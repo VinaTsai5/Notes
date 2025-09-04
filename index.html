@@ -163,27 +163,28 @@
       }
 
         
-        $('.tag-link').click(function(e){
-            e.preventDefault();
-            $('.tag-link').removeClass('active');
-            $(this).addClass('active');
-        });
-/*
-        let tagText = $(this).text();
-        if (tagText === '全部') 
+    $('.tag-link').click(function(e){
+        e.preventDefault();
+        $('.tag-link').removeClass('active');
+        $(this).addClass('active');
+    });
+    
+    let tagText = $(this).text();
+    if (tagText === '全部')
+    {
+        $('.post-card').show();
+    } 
+    else
+    {
+        $('.post-card').hide();
+        $('.post-tags .tag').each(function() 
         {
-            $('.post-card').show();
-        } 
-        else 
-        {
-            $('.post-card').hide();
-              $('.post-tags .tag').each(function() {
-                if (tagText.indexOf($(this).text()) !== -1) {
-                  $(this).parents('.post-card').show();
-                }
-              });
-        }
-      */
+            if (tagText.indexOf($(this).text()) !== -1) 
+            {
+                $(this).parents('.post-card').show();
+            }
+         });
+    }
     /*    
     // 取得純標籤文字（去除括號與數字）
     let rawText = $(this).text();
