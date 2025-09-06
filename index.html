@@ -204,7 +204,8 @@
       success: function(data) {
         var html = '';         
     
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) 
+        {
           var tag = data[i].tag;      
           var count = data[i].count;   
     
@@ -219,7 +220,7 @@
       },
 
   error: function() {
-    console.log('載入失敗，請檢查 tags.json 是否存在');
+    console.log('讀取失敗，請檢查 tags.json');
   }
 });
     </script>
