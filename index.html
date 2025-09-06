@@ -155,7 +155,8 @@
         greetingElement.textContent = '晚安！回味今日的美景';
       }
 
-        
+   function assignEvent()
+       {
     $('.tag-link').click(function(e){
         e.preventDefault();
         $('.tag-link').removeClass('active');
@@ -217,6 +218,8 @@
         }
     
         $('.tags-cloud').append(html);
+          assignEvent();
+
       },
     
       error: function() {
