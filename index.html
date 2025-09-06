@@ -157,27 +157,28 @@
 
    function assignEvent()
        {
-    $('.tag-link').click(function(e){
-        e.preventDefault();
-        $('.tag-link').removeClass('active');
-        $(this).addClass('active');
-
-        let tagText = $(this).text();
-        if (tagText === '全部')
-        {
-            $('.post-card').show();
-        } 
-        else
-        {
-            $('.post-card').hide();
-            $('.post-tags .tag').each(function() 
+        $('.tag-link').click(function(e){
+            e.preventDefault();
+            $('.tag-link').removeClass('active');
+            $(this).addClass('active');
+    
+            let tagText = $(this).text();
+            if (tagText === '全部')
             {
-                if (tagText.indexOf($(this).text()) !== -1) 
+                $('.post-card').show();
+            } 
+            else
+            {
+                $('.post-card').hide();
+                $('.post-tags .tag').each(function() 
                 {
-                    $(this).parents('.post-card').show();
-                }
-             });
-        }
+                    if (tagText.indexOf($(this).text()) !== -1) 
+                    {
+                        $(this).parents('.post-card').show();
+                    }
+                 });
+            }
+    }
 
         /*    
         // 取得純標籤文字（去除括號與數字）
@@ -217,8 +218,9 @@
           }
         }
     
-        $('.tags-cloud').append(html);
+        $('.tags-cloud').html(html);
           assignEvent();
+
 
       },
     
