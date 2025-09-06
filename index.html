@@ -198,16 +198,16 @@
 
     });
     $.ajax({
-      url: 'tags.json',        
-      method: 'GET',           
-      dataType: 'json',        
+      url: 'tags.json',
+      method: 'GET',
+      dataType: 'json',
       success: function(data) {
-        var html = '';         
+        var html = '';
     
         for (var i = 0; i < data.length; i++) 
         {
-          var tag = data[i].tag;      
-          var count = data[i].count;   
+          var tag = data[i].tag;
+          var count = data[i].count;
     
           if (tag === '全部') {
             html += '<a href="#" class="tag-link active">' + tag + '</a>';
@@ -216,13 +216,13 @@
           }
         }
     
-       $('.tags-cloud').append(html);
+        $('.tags-cloud').append(html);
       },
-
-  error: function() {
-    console.log('讀取失敗，請檢查 tags.json');
-  }
-});
+    
+      error: function() {
+        console.log('讀取失敗，請檢查 tags.json');
+      }
+    }); 
     </script>
 </body>
 </html>
