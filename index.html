@@ -155,6 +155,28 @@
         greetingElement.textContent = '晚安！回味今日的美景';
       }
 
+
+        /*    
+        // 取得純標籤文字（去除括號與數字）
+        let rawText = $(this).text();
+        let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
+    
+        // 顯示對應文章
+        if (tagText === '全部') {
+            $('.post-card').show();
+        } else {
+            $('.post-card').hide().filter(function() {
+                let tags = $(this).find('.post-tags .tag').map(function() {
+                    return $(this).text();
+                }).get();
+    
+                return tags.includes(tagText);
+            }).show();
+        }*/
+
+    });
+
+        
    function assignEvent()
        {
         $('.tag-link').click(function(e){
@@ -179,26 +201,6 @@
                  });
             }
     }
-
-        /*    
-        // 取得純標籤文字（去除括號與數字）
-        let rawText = $(this).text();
-        let tagText = rawText.replace(/\s*\(\d+\)/, ''); // 例如 "日本 (5)" → "日本"
-    
-        // 顯示對應文章
-        if (tagText === '全部') {
-            $('.post-card').show();
-        } else {
-            $('.post-card').hide().filter(function() {
-                let tags = $(this).find('.post-tags .tag').map(function() {
-                    return $(this).text();
-                }).get();
-    
-                return tags.includes(tagText);
-            }).show();
-        }*/
-
-    });
     $.ajax({
       url: 'tags.json',
       method: 'GET',
